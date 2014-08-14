@@ -1,0 +1,23 @@
+<resources>
+
+    <string name="app_name">reex2014 Alert List Widget</string>
+
+    <string name="titleBar">reex2014</string>
+
+    <string name="defaultHostURL">http://192.168.0.13:8080/reex2014</string>
+
+    <string name="cfgButtonCreateText">Create</string>
+
+    <string name="ConfigureActivityQuickHelp">Enter hostname, port and context root.\n I will append the /restapi/ruleengine/query to the HTTP request.</string>
+
+    <string name="ManifestWidgetLabel">aaa Alert List test</string>
+
+    <string name="ManifestConfigureActivityLabel">aaa Alert List test config</string>
+
+    <string name="listRowItemHeading">Heading</string>
+
+    <string name="listRowItemContent">Content</string>
+
+    <string name="noAlertText">No Alert</string>
+
+</resources>
