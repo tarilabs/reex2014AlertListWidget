@@ -20,7 +20,9 @@ public class AlertListWidgetProvider extends AppWidgetProvider {
 	    for (int appWidgetId: appWidgetIds) {
 	        RemoteViews rv = buildRemoteViews(context, appWidgetId);
 	        appWidgetManager.updateAppWidget(appWidgetId, rv);
-			appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetId, R.id.listViewWidget);
+			// works for me with appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.listViewWidget); outside this loop
+	        // and the following not more necessary.
+	        // appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetId, R.id.listViewWidget);
 	    }
 	}
 
