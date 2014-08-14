@@ -87,6 +87,7 @@ public class ListProvider implements RemoteViewsFactory {
 			}
 			// REST api first is array of Drools Query
 			JSONArray jsonArray = new JSONArray(rBuilder.toString());
+			listItemList.clear();
 			for (int i = 0; i < jsonArray.length(); i++) {
 		        JSONObject jsonObject = jsonArray.getJSONObject(i);
 		        JSONObject alertJson = jsonObject.getJSONObject("$alert");
@@ -162,6 +163,7 @@ public class ListProvider implements RemoteViewsFactory {
 	// Note: accordingly to Android doc. , it's okay to do expensive task (eg: network) here synchronously.
 	@Override
 	public void onDataSetChanged() {
+		Log.i("net.tarilabs", "onDataSetChanged()");
 		SharedPreferences prefs = context.getSharedPreferences(Configure.SHARED_PREF_NAME, Context.MODE_PRIVATE);
 		String cogitoBaseURL = prefs.getString(Configure.SHARED_PREF_KEY, "asd");
 		Log.i("net.tarilabs", "cogito base URL from prefs: " + cogitoBaseURL);

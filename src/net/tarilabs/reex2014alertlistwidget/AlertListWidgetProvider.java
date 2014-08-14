@@ -15,15 +15,18 @@ public class AlertListWidgetProvider extends AppWidgetProvider {
 	@Override
 	public void onUpdate(final Context context, final AppWidgetManager appWidgetManager, final int[] appWidgetIds) {
 	    super.onUpdate(context, appWidgetManager, appWidgetIds);
-
+	    Log.i("net.tarilabs", "onUpdate()");
+	    appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.listViewWidget);
 	    for (int appWidgetId: appWidgetIds) {
 	        RemoteViews rv = buildRemoteViews(context, appWidgetId);
 	        appWidgetManager.updateAppWidget(appWidgetId, rv);
+			appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetId, R.id.listViewWidget);
 	    }
 	}
 
 	
 	public static RemoteViews buildRemoteViews(final Context context, final int appWidgetId) {
+		Log.i("net.tarilabs", "buildRemoteViews()" + appWidgetId);
         final RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget);
         Intent intent = new Intent(context, WidgetService.class);
         intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
@@ -51,6 +54,7 @@ public class AlertListWidgetProvider extends AppWidgetProvider {
 }
 
 	public static void updateAppWidget(final Context context, final AppWidgetManager appWidgetManager, final int appWidgetId) {
+		Log.i("net.tarilabs", "updateAppWidget()" + appWidgetId);
 		final RemoteViews views = buildRemoteViews(context, appWidgetId);
 		appWidgetManager.updateAppWidget(appWidgetId, views);
 	}
