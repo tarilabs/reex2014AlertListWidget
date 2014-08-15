@@ -37,9 +37,8 @@
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:gravity="center"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
+        android:textStyle="italic"
         android:text="@string/noAlertText"
-        android:textSize="20sp" />
+        android:textAppearance="?android:attr/textAppearanceSmall" />
  
 </LinearLayout>
